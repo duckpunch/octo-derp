@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    width: 100%;
+}
+
+#container {
+    width: 1200px;
+    margin: auto;
+}
+
+#row-container {
+    clear: both;
+}
+
+.borderless-row {
+    width: 1120px;
+    margin: auto;
+    padding: 10px 0;
+    text-align: right;
+}
+
+.row {
+    width: 1120px;
+    margin: auto;
+    border-top: 1px solid #ccc;
+    clear: both;
+}
+
+.header-day {
+    width: 140px;
+    text-align: center;
+    height: 20px;
+    float: left;
+}
+
+.day {
+    width: 139px;
+    float: left;
+    height: 100px;
+    border-left: 1px solid #ccc;
+    position: relative;
+}
+
+.day:hover, .total:hover {
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+.total {
+    width: 138px;
+    float: left;
+    height: 100px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px;
+}
+
+.today {
+    background: #ccffff;
+}

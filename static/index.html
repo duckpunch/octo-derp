@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="style.css" type="text/css" rel="stylesheet" media="screen" />
+    <script type="text/javascript" src="jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="jquery.jqote2.min.js"></script>
+    <script type="text/javascript" src="running_thing.js"></script>
+</head>
+<body>
+<div id="container">
+    <div class="borderless-row">
+        <a href="#" onclick="previous_month()">previous month</a>
+        <a href="#" onclick="next_month()">next month</a>
+    </div>
+    <div class="borderless-row">
+            <div class="header-day">M</div>
+            <div class="header-day">Tu</div>
+            <div class="header-day">W</div>
+            <div class="header-day">Th</div>
+            <div class="header-day">F</div>
+            <div class="header-day">Sa</div>
+            <div class="header-day">Su</div>
+            <div class="header-day">Total</div>
+    </div>
+    <div id="row-container"></div>
+    <div class="row"></div>
+</div>
+<script id="day-template" type="text/x-jqote-template">
+    <![CDATA[
+        <div class="day <%= this.when %>">
+            <div class="date"><%= this.date %></div>
+        </div>
+    ]]>
+</script>
+<script id="row-template" type="text/x-jqote-template">
+    <![CDATA[
+        <div class="row">
+            days
+            <div class="total"></div>
+        </div>
+        <% out = out.replace("days", $("#day-template").jqote(this.days)); %>
+    ]]>
+</script>
+</body>
+</html>

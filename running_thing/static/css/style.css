@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    width: 100%;
+}
+
+#container {
+    width: 1200px;
+    margin: auto;
+}
+
+#row-container {
+    clear: both;
+}
+
+.borderless-row {
+    width: 1120px;
+    margin: auto;
+    padding: 10px 0;
+    text-align: right;
+}
+
+.row {
+    width: 1120px;
+    margin: auto;
+    clear: both;
+}
+
+.header-day {
+    width: 140px;
+    text-align: center;
+    height: 20px;
+    float: left;
+}
+
+.day {
+    width: 130px;
+    float: left;
+    height: 100px;
+    padding: 5px;
+    position: relative;
+}
+
+.rounded:hover, .total:hover {
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+.total {
+    width: 138px;
+    float: left;
+    height: 100px;
+    position: relative;
+}
+
+.date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px;
+}
+
+.today {
+    background: #ccffff;
+}
+
+.miles {
+    font-size: 14pt;
+    padding: 5px 0 0 15px;
+}
+
+.time {
+    padding: 5px 0 0 15px;
+}
+
+.miles-entry {
+    background: #ccc;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    text-align: center;
+}
+
+.miles-entry button {
+    padding: 3px 5px;
+    margin-top: 3px;
+}
+
+.miles-entry input {
+    width: 100px;
+    margin-top: 3px;
+}
+
+.goal-entry {
+    background: #ccc;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+.rounded {
+    border-radius: 10px 5px;
+    border: 1px solid #ccc;
+    height: 80px;
+    width: 120px;
+    margin: auto;
+}
