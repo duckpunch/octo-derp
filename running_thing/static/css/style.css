@@ -109,9 +109,9 @@ body {
 }
 
 .rounded {
-    border-radius: 10px 5px;
+    border-radius: 10px;
     border: 1px solid #ccc;
-    height: 80px;
-    width: 120px;
+    height: 97px;
+    width: 130px;
     margin: auto;
 }

@@ -1,18 +1,13 @@
 import os
-from secret_settings import *
 
 PROJECT_ROOT = os.path.join('..', os.getcwd())
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
 MANAGERS = ADMINS
-
-
 
 TIME_ZONE = 'America/Vancouver'
 
@@ -123,3 +118,5 @@ LOGGING = {
         },
     }
 }
+
+from secret_settings import *
