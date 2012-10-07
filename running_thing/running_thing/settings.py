@@ -1,6 +1,7 @@
 import os
 
-PROJECT_ROOT = os.path.join('..', os.path.dirname(__file__))
+PROJECT_ROOT = os.path.join(os.path.dirname(__file__), '..')
+print PROJECT_ROOT
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
