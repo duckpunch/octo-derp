@@ -39,11 +39,11 @@
                     <div class="time">
                         <span class="time-total"><%= this.total_time_str %></span>
                         <span class="time-spacer">&nbsp;</span>
-                        <span class="time-pace"><%= this.pace ? '' + this.pace + '' : '&nbsp;'%></span>
+                        <span class="time-pace"><%= (this.pace ? '' + this.pace + '' : '&nbsp;') %></span>
                     </div>
                     <div id="miles-entry-<%= this.date_uniq %>" class="miles-entry">
-                        <input name="miles_ran" type="text" placeholder="miles ran"/>
                         <input name="miles_planned" type="text" placeholder="miles planned"/>
+                        <input name="miles_ran" type="text" placeholder="miles ran"/>
                         <input name="running_time" type="text" placeholder="time"/>
                         <div>
                             <button onclick="save_log('<%= this.date_str %>')">save</button>
