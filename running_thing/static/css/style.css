@@ -6,6 +6,7 @@
 
 body {
     width: 100%;
+    background: #5b5b5b;
 }
 
 #container {
@@ -35,6 +36,7 @@ body {
     text-align: center;
     height: 20px;
     float: left;
+    color: #fff;
 }
 
 .day {
@@ -62,10 +64,11 @@ body {
     top: 0;
     right: 0;
     padding: 4px;
+    color: #666;
 }
 
 .today {
-    background: #ccffff;
+    background: #8fc8e0;
 }
 
 .miles {
@@ -110,8 +113,16 @@ body {
 
 .rounded {
     border-radius: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #fff;
     height: 97px;
     width: 130px;
     margin: auto;
+}
+
+.past {
+    background: #fdd7a7;
+}
+
+.future {
+    background: #d1d2d4;
 }

@@ -69,7 +69,7 @@ function populate_results(logs) {
         week.total = 0;
 
         for (var j = 0; j < week.days.length; j++) {
-            week.total += parseInt(week.days[j].miles_ran, 10);
+            week.total += parseFloat(week.days[j].miles_ran, 10);
         }
     }
 
@@ -93,6 +93,7 @@ function build_month(first_date, num_days) {
     var moving_date = new Date(first_date);
     var weeks = [];
     var cur_week = null;
+    var month_str = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
     retrieve_all();
 
@@ -104,12 +105,19 @@ function build_month(first_date, num_days) {
             moving_date.setDate(moving_date.getDate() + 1);
         }
 
+        var today_class = "";
+        if (equal_dates(moving_date, today)) {
+            today_class = "today";
+        } else {
+            today_class = moving_date.valueOf() > today.valueOf()? "future":"past";
+        }
+
         date_hash[moving_date.toDateString()] = {
             date_uniq: moving_date.toDateString().replace(/ /g, ""),
             date_str: moving_date.toDateString(),
-            date: moving_date.getDate(),
+            date: month_str[moving_date.getMonth()] + " " + moving_date.getDate(),
             date_obj: new Date(moving_date),
-            today_class: equal_dates(moving_date, today)?"today":"",
+            today_class: today_class,
             miles_ran: 0,
             miles_planned: 0,
             week: cur_week,
