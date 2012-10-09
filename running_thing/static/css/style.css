@@ -5,7 +5,10 @@
 
 body {
     width: 100%;
+    color: #333;
     background: #5b5b5b;
+    background: #fdd7a7;
+    background: #f1aa51;
     font-family: 'Courgette', cursive;
     font-family: 'Handlee', sans-serif;
     font-family: 'Montserrat Alternates', sans-serif;
@@ -33,14 +36,14 @@ body {
 }
 
 .borderless-row {
-    width: 1120px;
+    width: 1160px;
     margin: auto;
     padding: 10px 0;
     text-align: right;
 }
 
 .row {
-    width: 1120px;
+    width: 1160px;
     margin: auto;
     clear: both;
 }
@@ -68,11 +71,12 @@ body {
     top: 20px;
 }
 
+.past .day-container {
+    background: #f8f8f8;
+}
+
 .total {
-    width: 138px;
-    float: left;
-    height: 100px;
-    position: relative;
+    margin-left: 15px;
 }
 
 .date {
@@ -83,6 +87,9 @@ body {
     right: 5px;
     top: 3px;
 }
+.past .date {
+    color: #555;
+}
 
 .today {
     background: #8fc8e0;
@@ -92,6 +99,9 @@ body {
     font-size: 16pt;
     margin: 2px 0px 0px;
     text-align: center;
+}
+.past .miles-ran {
+    color: #222;
 }
 
 .miles-planned {
@@ -154,15 +164,32 @@ body {
     margin: auto;
 }
 
-.rounded:hover, .total:hover {
-    background: #f0f0f0;
+.rounded:hover {
+    background: #eea;
     cursor: pointer;
 }
 
 .past {
-    background: #fdd7a7;
+    background: #888;
+    background: #c3dde8;
 }
 
 .future {
     background: #d1d2d4;
 }
+
+.neutral {
+    background: #f4efa0;
+    background: #c3dde8;
+    background: #aaa;
+}
+
+.success {
+    background: #c3dde8;
+    background: #c3dd88;
+}
+
+.fail {
+    background: #f7acb9;
+}
+
