@@ -69,8 +69,11 @@ function populate_results(logs) {
         week.total = 0;
 
         for (var j = 0; j < week.days.length; j++) {
-            week.total += parseFloat(week.days[j].miles_ran, 10);
+            if (week.days[j].miles_ran) {
+                week.total += parseFloat(week.days[j].miles_ran);
+            }
         }
+        week.total = week.total > 0? week.total.toFixed(2) : '';
     }
 
     redraw();
