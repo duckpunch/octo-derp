@@ -54,7 +54,7 @@ function populate_results(logs) {
             var running_time = parseInt(log.running_time_seconds, 10);
             var mileage = parseFloat(log.miles_ran);
             var js_date_obj = date_hash[log_date.toDateString()];
-            js_date_obj.miles_ran = log.miles_ran;
+            js_date_obj.miles_ran = parseFloat(log.miles_ran) == 0? 0:log.miles_ran;
             js_date_obj.miles_planned = log.miles_planned;
             js_date_obj.total_seconds = log.running_time_seconds;
             js_date_obj.total_time_str = seconds_to_time_str(running_time);
