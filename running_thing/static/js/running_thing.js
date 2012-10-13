@@ -220,6 +220,10 @@ function save_log(date_str) {
         )
     };
 
+    if ($miles_entry.find("input[name='running_time']").val() == "0") {
+        log_update["running_time_seconds"] = "0";
+    }
+
     for (var k in log_update) {
         if (log_update[k] == '') {
             delete log_update[k];
