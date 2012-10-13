@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700|Carrois+Gothic|Courgette|Quantico|Doppio+One|Handlee|Titillium+Web' rel='stylesheet' type='text/css'>
     <link type="text/css" href="{% static "css/style.css" %}" rel="stylesheet" media="screen" />
     <script type="text/javascript" src="{% static "js/jquery-1.8.0.min.js" %}"></script>
     <script type="text/javascript" src="{% static "js/jquery.jqote2.min.js"%}"></script>
@@ -22,27 +23,34 @@
             <div class="header-day">F</div>
             <div class="header-day">Sa</div>
             <div class="header-day">Su</div>
-            <div class="header-day">Total</div>
+            <div class="header-day total">Total</div>
     </div>
     <div id="row-container"></div>
     <div class="row"></div>
+</div>
+<div style="height: 350px; background: url('{% static "img/dino.png" %}') no-repeat bottom">
 </div>
 <script id="day-template" type="text/x-jqote-template">
     <![CDATA[
         <div class="day">
             <div class="rounded <%= this.today_class %>">
                 <div class="date"><%= this.date %></div>
-                <div class="miles"><%= (this.miles_ran? this.miles_ran + ' ran': '') %></div>
-                <div class="miles"><%= (this.miles_planned? this.miles_planned + ' plan' : '') %></div>
-                <div class="time"><%= this.total_time_str %></div>
-                <div class="time"><%= this.pace %></div>
-                <div id="miles-entry-<%= this.date_uniq %>" class="miles-entry">
-                    <input name="miles_ran" type="text" placeholder="miles ran"/>
-                    <input name="miles_planned" type="text" placeholder="miles planned"/>
-                    <input name="running_time" type="text" placeholder="time"/>
-                    <div>
-                        <button onclick="save_log('<%= this.date_str %>')">save</button>
-                        <button onclick="$('#miles-entry-<%= this.date_uniq %>').hide(200);">cancel</button>
+                <div class="day-container">
+                    <div class="miles-planned"><%= (this.miles_planned? '<span>plan:</span> ' + this.miles_planned + ' mi' : '&nbsp;') %></div>
+                    <div class="miles-ran"><%= (this.miles_ran? this.miles_ran + ' mi': '&nbsp;') %></div>
+                    <div class="time">
+                        <span class="time-total"><%= this.total_time_str %></span>
+                        <span class="time-spacer">&nbsp;</span>
+                        <span class="time-pace"><%= (this.pace ? '' + this.pace + '' : '&nbsp;') %></span>
+                    </div>
+                    <div id="miles-entry-<%= this.date_uniq %>" class="miles-entry">
+                        <input name="miles_planned" type="text" placeholder="miles planned"/>
+                        <input name="miles_ran" type="text" placeholder="miles ran"/>
+                        <input name="running_time" type="text" placeholder="time"/>
+                        <div>
+                            <button onclick="save_log('<%= this.date_str %>')">save</button>
+                            <button onclick="$('#miles-entry-<%= this.date_uniq %>').hide(200);">cancel</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -53,14 +61,19 @@
     <![CDATA[
         <div class="row">
             days
-            <div class="total">
-                <div class="miles"><%= (this.total? this.total + ' ran': '') %></div>
-                <div class="miles"><%= (this.goal? this.goal + ' planned': '') %></div>
-                <div id="goal-entry-<%= this.monday_str %>" class="goal-entry">
-                    <input name="goal" type="text" placeholder="goal"/>
-                    <div>
-                        <button onclick="save_plan('<%= this.monday_str %>')">save</button>
-                        <button onclick="$('#goal-entry-<%= this.monday_str %>').hide(200);">cancel</button>
+            <div class="total day">
+                <div class="neutral rounded <% if (this.total && this.goal) if (this.total >= this.goal) { %>success<% } else { %>fail<% } %>">
+                    <div class="date"></div>
+                    <div class="day-container">
+                        <div class="miles-planned"><%= (this.goal? this.goal + ' planned': '&nbsp;') %></div>
+                        <div class="miles-ran"><%= (this.total? this.total + ' ran': '&nbsp;') %></div>
+                        <div id="goal-entry-<%= this.monday_str %>" class="goal-entry">
+                            <input name="goal" type="text" placeholder="goal"/>
+                            <div>
+                                <button onclick="save_plan('<%= this.monday_str %>')">save</button>
+                                <button onclick="$('#goal-entry-<%= this.monday_str %>').hide(200);">cancel</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
