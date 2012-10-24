@@ -62,7 +62,7 @@
         <div class="row">
             days
             <div class="total day">
-                <div class="neutral rounded <% if (this.total && this.goal) if (this.total >= this.goal) { %>success<% } else { %>fail<% } %>">
+                <div class="neutral rounded <% if (this.total && this.goal) if (parseFloat(this.total) >= parseFloat(this.goal)) { %>success<% } else { %>fail<% } %>">
                     <div class="date"></div>
                     <div class="day-container">
                         <div class="miles-planned"><%= (this.goal? this.goal + ' planned': '&nbsp;') %></div>
