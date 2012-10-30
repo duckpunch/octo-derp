@@ -138,13 +138,28 @@ body {
 }
 
 .miles-entry button {
-    padding: 3px 5px;
+    padding: 2px 5px;
+    width: 50px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    color: #999;
+}
+
+.miles-entry button:hover {
+    color: #8fc8e0;
 }
 
 .miles-entry input {
-    width: 100px;
+    width: 102px;
     margin: 0 auto;
     display: block;
+    border: 1px solid #ccc;
+    margin-top: 1px;
+}
+
+.miles-entry input:focus {
+    outline: none;
 }
 
 .goal-entry {
